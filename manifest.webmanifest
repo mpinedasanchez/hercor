@@ -1,0 +1,21 @@
+{
+  "name": "Smart Meter Agent",
+  "short_name": "SMA",
+  "start_url": "./index.html",
+  "scope": ".",
+  "icons": [
+    {
+      "src": "./logo128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "./logo256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffd31d",
+  "background_color": "#333",
+  "display": "standalone"
+}

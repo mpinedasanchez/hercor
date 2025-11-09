@@ -1,0 +1,83 @@
+<!doctype html>
+<html class="no-js" lang="es">
+<link rel="manifest" href="./manifest.webmanifest">
+<head>
+  <meta charset="utf-8">
+  <title>ISEE-Konta</title>
+  <meta name="description" content=">Gestión de demanda eléctrica">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="theme-color" content="#fafafa">
+
+  <style>
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      width:15px;padding:0px;margin:0px;margin-top:10px;
+      filter: invert(1);
+
+    }
+    .miselected {
+      text-align: left;
+      text-align-last: center;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      text-indent: 0px;
+      background: var(--bs-light);
+    }
+  </style>
+  <link rel="icon" href="./favicon.ico" sizes="any" defer>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" defer>
+  <!---  <link href="css/bootstrap.min.css" rel="stylesheet"  media="all">-->
+ </head>
+
+
+ <body>
+ <div class="card">
+   <div class="card-header d-flex flex-row flex-grow-1" style="background: var(--bs-light);">
+     <div class="col d-flex flex-row flex-grow-0 flex-wrap flex-sm-nowrap">
+       <select class="border-0"  style="background: var(--bs-light);" id="sel-pag">
+       <option value="0" name="pag" selected>Consumo</option>
+       <option value="1" name="pag" >Potencia</option>
+       <option value="2" name="pag" >Facturación</option>
+      </select>
+       <select class="border-0" style="background: var(--bs-light);" id="sel-grup">
+       <option value="0" name="grup" selected>15&#39;</option>
+       <option value="1" name="grup">hora</option>
+       <option value="2" name="grup">día</option>
+       <option value="3" name="grup">semana</option>
+       <option value="4" name="grup">mes</option>
+       <option value="5" name="grup">año</option>
+     </select></div>
+     <div class="col d-flex flex-row flex-grow-1 justify-content-start align-items-start align-content-start flex-wrap justify-content-sm-center">
+       <input class="d-xxl-flex align-self-baseline align-items-xxl-center" type="date" id="cal_desde"  style="border-style: none;padding: 1px 0px 0px 0px;--bs-body-font-size: 2rem;--bs-body-font-weight: normal;font-size: 16px;background: var(--bs-light);" />
+       <div class="dropend d-flex" style="box-shadow: 0px 0px;background: var(--bs-light);padding-top: 0px;"><button class="btn btn-outline-success active dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button" style="border-style: none;background: var(--bs-light);color: var(--bs-dark);padding-top: 0px;"> </button>
+         <div class="dropdown-menu">
+           <input type="number" id="cal_units" value="1" style="margin-right: 15px;margin-left: 15px;width: 55px;border-style: none;" />
+           <a class="dropdown-item"  href="#"></a>
+           <button class="btn dropdown-item" name="interv" value="1" >Día</button>
+           <button class="btn dropdown-item" name="interv" value="2" >Semana</button>
+           <button class="btn dropdown-item" name="interv" value="3" >Mes</button>
+           <button class="btn dropdown-item" name="interv" value="4" >Año</button>
+           <button class="btn dropdown-item" name="interv" value="5" >Todo</button>
+         </div>
+       </div>
+       <input class="d-xxl-flex align-self-baseline align-items-xxl-center" type="date"  id="cal_hasta" style="border-style: none;padding: 1px 0px 0px 0px;--bs-body-font-size: 2rem;--bs-body-font-weight: normal;font-size: 16px;background: var(--bs-light);" />
+     </div>
+   </div>
+ </div>
+
+  <div class="card-body" id="container" style="height: 800px;">
+    <span class="spinner-border spinner-border-sm textprimary text-primary" role="status"></span>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" defer></script>
+<!--<script src="js/bootstrap.min.js"></script>-->
+
+<script src="https://code.highcharts.com/stock/highstock.js" defer></script>
+<script src="https://code.highcharts.com/modules/boost.js" defer></script>
+<script src="https://code.highcharts.com/stock/modules/data.js" defer></script>
+<script src="https://code.highcharts.com/stock/modules/exporting.js" defer></script>
+<script src="https://code.highcharts.com/stock/modules/export-data.js" defer></script>
+<script src="./fconta.js" defer> </script>
+</body>
+</html>
